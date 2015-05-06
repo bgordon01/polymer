@@ -1,0 +1,10 @@
+body {
+  background: #fafafa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1024px;
+}
