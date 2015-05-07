@@ -1,10 +1,100 @@
 body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  font-family: "RobotoDraft", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  background-color: #fafafa;
+  font-weight: 300;
+  color: 333;
+  font-size: 12px;
 }
 
 .wrapper {
   margin: 0 auto;
   width: 1024px;
 }
+
+#drawerPanel {
+  width: 100%; 
+  height: 100%; 
+}
+
+#drawerPanel core-header-panel{
+  width: 265px; 
+  height: 100%; 
+  background-color: #EEE; 
+  border-right: 1px solid #ccc;
+}
+
+#drawerPanel #logoContainer { 
+  align-items: center;
+  height: 80px;
+  padding-left: 14px;
+  border-bottom: 1px solid #ccc;
+} 
+
+#drawerPanel .logo { 
+  text-decoration: none;
+  color: inherit;
+} 
+
+#drawerPanel core-header-panel core-menu { 
+  color: #424242;
+} 
+
+#drawerPanel core-header-panel core-menu core-submenu { 
+  font-size: 12px;
+} 
+
+#drawerPanel core-header-panel core-menu core-item { 
+  font-size: 12px;
+} 
+
+#drawerPanel core-header-panel core-menu core-submenu.first { 
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+} 
+
+#drawerPanel core-header-panel core-menu core-submenu.first core-submenu { 
+  font-size: 13px;
+} 
+
+#drawerPanel:not([narrow]) core-scroll-header-panel [content] {
+  padding: 30px 0;
+}
+
+#drawerPanel[narrow][selected="drawer"] .fade-on-drawer-open {
+  opacity: 0;
+}
+
+#mainheader {
+  color: #fff;
+  background-color: #276474;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+#mainheader .title {
+  font-size: 20px;
+  transform-origin: 0px 50%;
+  margin-left: 70px;
+}
+
+#mainheader.tall .title {
+  font-size: 40px;
+}
+
+core-scroll-header-panel > [content] {
+  height: 100%;
+}
+
+/*#scrollHeader {
+  height: 100%;
+}
+
+#scrollHeader core-toolbar {
+  width: 100%;
+  background-color: #276474;
+  color: #fff;
+}*/
+
+
+

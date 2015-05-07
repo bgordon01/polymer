@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>poly foo</title>
+        <title>Kwantu Ltd | Documentation & Sandbox v2.0</title>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+        <link rel="icon" href="favicon.ico">
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild-->
@@ -16,15 +16,76 @@
         <!-- will be replaced with elements/elements.vulcanized.html -->
         <link rel="import" href="elements/elements.html">
         <!-- endreplace-->
+        <link rel="import" href="bower_components/font-roboto/roboto.html"> 
+        <link rel="import" href="bower_components/core-elements/core-elements.html"> 
     </head>
     <body unresolved fullbleed layout vertical>
-        <div class="wrapper">
-            <h1>KUL Elements</h1>
-            <p>This is a list of all the Kwantu User Interface Elements ( KUL - pronounced as 'cool' ).</p>
-            <p>
-                
-            </p>
-        </div>
+        <template id="app" is="auto-binding">
+            <core-drawer-panel id="drawerPanel">
+                <core-header-panel mode="scroll" drawer>
+                    <div id="logoContainer" layout horizontal center>
+                        <a href="/" class="logo">
+                            <img src="images/kwantu_logo.png" width="168" height="45">
+                            <span>v2.0 alpha</span>
+                        </a>
+                    </div>
+                    <core-menu selected="0" on-core-select="{{menuSelect}}">
+                        <core-submenu class="first" icon="create" src="" label="Introduction">
+                            <core-item label="Getting started"></core-item>
+                            <core-item label="Installation guide"></core-item>
+                            <core-item label="Examples"></core-item>
+                        </core-submenu>
+                        <core-submenu class="first" icon="assignment" src="" label="Resources">
+                            <core-item label="Node"></core-item>
+                            <core-item label="Express"></core-item>
+                            <core-item label="Polymer"></core-item>
+                        </core-submenu>
+                        <core-submenu class="first" icon="polymer" src="" label="Elements">
+                            <core-submenu icon="expand-more" src="" label="Core">
+                                <core-item label="&lt;kul-include/&gt;"></core-item>
+                                <core-item label="&lt;kul-menu/&gt;"></core-item>
+                            </core-submenu>
+                            <core-submenu icon="expand-more" src="" label="Visual">
+                                <core-item label="&lt;kul-map/&gt;"></core-item>
+                                <core-item label="&lt;kul-viewer/&gt;"></core-item>
+                                <core-item label="&lt;kul-chart/&gt;"></core-item>
+                            </core-submenu>
+                            <core-submenu icon="expand-more" src="" label="Layout">
+                                <core-item label="kul-vbox"></core-item>
+                                <core-item label="kul-hbox"></core-item>
+                                <core-item label="kul-tabs"></core-item>
+                                <core-item label="kul-accordion"></core-item>
+                            </core-submenu>
+                            <core-submenu icon="expand-more" src="" label="Form">
+                                <core-item label="&lt;kul-textbox/&gt;"></core-item>
+                                <core-item label="&lt;kul-textarea/&gt;"></core-item>
+                                <core-item label="&lt;kul-checkbox/&gt;"></core-item>
+                                <core-item label="&lt;kul-radio/&gt;"></core-item>
+                                <core-item label="&lt;kul-combobox/&gt;"></core-item>
+                                <core-item label="&lt;kul-button/&gt;"></core-item>
+                                <core-item label="&lt;kul-upload/&gt;"></core-item>
+                                <core-item label="&lt;kul-datepicker/&gt;"></core-item>
+                            </core-submenu>
+                        </core-submenu>
+                        <core-submenu class="first" icon="dashboard" src="" label="Components">
+                            <core-item label="app"></core-item>
+                        </core-submenu>
+                        <core-submenu class="first" icon="apps" src="" label="Applications">
+                            <core-item label="base"></core-item>
+                        </core-submenu>
+                    </core-menu>
+                </core-header-panel>
+                <core-scroll-header-panel id="scrollheader" main condenses="{{!narrow}}" keepCondensedHeader fixed?="{{narrow}}" on-trackstart="{{onRefreshStart}}"  on-tracky="{{onMainAreaTrack}}" on-trackend="{{onRefreshUp}}">
+                    <core-toolbar id="mainheader" class="{{ {tall: !narrow, 'core-narrow': narrow, 'selected-threads': selectedThreads.length} | tokenList }}">
+                        <div flex></div>
+                        <span class="bottom indent title"></span> 
+                    </core-toolbar>
+                    <div content>
+
+                    </div>
+                </core-scroll-header-panel>
+            </core-drawer-panel>
+        </template>
         <!-- build:js scripts/app.js -->
         <script src="scripts/app.js"></script>
         <!-- endbuild-->
